@@ -1,9 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-
-    </head>
-    <body>
-        <h1>zzzzzzz</h1>
-    </body>
+<html lang="ko">
+ <head>
+  <meta charset = utf-8">
+  <title></title>
+ </head>
+ <body>
+   <div class="login-wrapper">
+      <h2>Login</h2>
+      <form method="post" action="{% url 'login' %}" id="login-form">{% csrf_token %}
+          <input type="text" name="username" placeholder="Email">
+          <input type="password" name="pwd" placeholder="Password">
+          <label for="remember-check">
+              <input type="checkbox" id="remember-check">아이디 저장하기
+          </label>
+          <input type="submit" value="Login">
+      </form>
+  </div>
+ </body>
 </html>
