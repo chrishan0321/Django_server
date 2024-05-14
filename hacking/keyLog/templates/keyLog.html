@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key Logger</title>
+    <script>
+    document.addEventListener('keypress', function(e) {
+        fetch('/keyLog/log_key/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({ user_id: 'user123', key: e.key })
+        });
+    });
+    </script>
+</head>
+<body>
+    <p>Type something to test key logging:</p>
+    <input type="text" autofocus>
+</body>
+</html>
